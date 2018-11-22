@@ -4,3 +4,4 @@ standardize_df <- function(df, vars){
 library(tidyverse)
   df %>% mutate_each_(funs(scale),vars=vars)
 }
+
