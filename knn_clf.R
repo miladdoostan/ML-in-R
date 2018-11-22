@@ -2,6 +2,8 @@
 # predictors and response take char vectors.
 
 k_nearest_neighbors <- function(df, predictors, response, k=5, folds=5, seed=NA){
+    library(tidyverse)
+    source("split_df.R")
     splited_df <- split_df(df, folds, seed)
     cm <- list()
     for (i in 1:folds){
