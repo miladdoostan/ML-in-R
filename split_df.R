@@ -1,6 +1,6 @@
 # A simple function for splitting a tibble into K tibbles
 split_df <- function(df, folds, seed){
-library(tidyverse)
+    library(tidyverse)
     if (!is.na(seed)){set.seed(seed)}
     splited_df <- df %>% 
     sample_frac(1) %>% 
