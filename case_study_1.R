@@ -22,6 +22,9 @@ print(head(df))
 predictors <-c("horsepower", "origin", "weight", 'cylinders', 'year', 'displacement', "acceleration")
 response <- c("mpg01")
 
+# standardizing the df
+df <- standardize_df(df, vars = predictors[-c(2,4)])
+
 # building LR nad KNN classifiers
 LR_cm <- logistic_regression(df, predictors, response, folds = 5, seed=1)
 knn_cm <- k_nearest_neighbors(df, predictors, response, k=5, folds=5, seed=1)
