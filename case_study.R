@@ -27,3 +27,4 @@ knn_acc <- map_dbl(knn_cm, function(x){sum(diag(x))/sum(x)})
 # printing the results
 print(paste("Logistic regression average accuracy: ", mean(LR_acc)))
 print(paste("KNN average accuracy: ", mean(knn_acc)))
+
