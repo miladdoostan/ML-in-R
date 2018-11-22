@@ -2,6 +2,6 @@
 
 standardize_df <- function(df, vars){
   library(tidyverse)
-  df %>% mutate_each_(funs(scale),vars=vars)
+  df %>% mutate_at(vars, funs(scale))
 }
 
