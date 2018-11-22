@@ -1,4 +1,4 @@
-# A simple function that calculates the confusion matrix 
+# A simple function that calculates the confusion matrix for a logistic regression glm model
 
 confusion_matrix <- function(df, model, response){
     library(tidyverse)
