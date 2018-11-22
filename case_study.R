@@ -17,7 +17,7 @@ predictors <-c("horsepower", "origin", "weight", 'cylinders', 'year', 'displacem
 response <- c("mpg01")
 
 # building LR nad KNN classifiers
-LR_cm <- k_nearest_neighbors(df, predictors, response)
+LR_cm <- logistic_regression(df, predictors, response)
 knn_cm <- k_nearest_neighbors(df, predictors, response)
 
 # calculating the average accuracy of cross-validation sets
