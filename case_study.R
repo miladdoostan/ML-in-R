@@ -1,3 +1,9 @@
+# In this cse study, I will use the Auto dataframe from ISLR. I will create a binary variable from mpg. I then apply two
+# classifiers, namely logistic_regression and k_nearest_neighbors ( both available in repo) to the data. Then, I 
+# calculate the average classification accuracy for both models. The predictios could change to see which combinations deliver
+# the best result.
+
+
 # importing necessary libraries and functions
 library(tidyverse)
 library(ISLR)
