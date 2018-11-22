@@ -5,7 +5,7 @@
 logistic_regression <- function(df, predictors, response, folds = 5, seed=NA){
     library(tidyverse)
     source("split_df.R")
-    source("confisua"
+    source("confusion_matrix.R")
     splited_df <- split_df(df, folds, seed)
     cm <- list()
     for (i in 1:folds){
