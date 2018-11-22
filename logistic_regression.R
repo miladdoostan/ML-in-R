@@ -1,4 +1,4 @@
-# Fit a logistic regression to a tibble using k-fold cross validation and outputs the confusion matrices for all folds.
+# Fit a binary logistic regression to a tibble using k-fold cross validation and outputs the confusion matrices for all folds.
 # The regularization is not included in this model.
 # predictors and response take char vectors.
 
