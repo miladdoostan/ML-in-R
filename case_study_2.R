@@ -1,3 +1,6 @@
+# In this cse study, I will use the Auto dataframe from ISLR. I will create a binary variable from mpg. I then apply build xgb model.
+# and fit it to the training data. I look at the training and testing errors, feature importance, and model performance on the test set.
+
 library(tidyverse)
 library(xgboost)
 library(Matrix)
