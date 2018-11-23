@@ -13,7 +13,6 @@ df  <- df %>% mutate(cylinders =  factor(cylinders, levels=c(3,4,5,6,8), ordered
                      mpg01 = as.factor(ifelse(mpg >= median(mpg), 1, 0)))
 df %>% head()
 
-
 # creating training and testing data
 df_train <- train_test_split(select(df, -name, -mpg), 0.8, seed=1)$training
 df_test <-  train_test_split(select(df, -name, -mpg), 0.8, seed=1)$testing
@@ -67,4 +66,5 @@ pred <- predict(xgb_model, matrix_test) %>%
   as_tibble() %>% mutate(pred = as.factor(ifelse(V1 >= 0.5, 0, 1))) %>% pull(pred)
 
 df_test %>% mutate(pred = pred) %>% select(mpg01, pred) %>% table()
+
 
