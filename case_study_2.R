@@ -4,7 +4,6 @@ library(Matrix)
 library(ISLR)
 source("train_test_split.R")
 
-
 # importing the data set and some cleaning
 df <- Auto %>% as_tibble()
 df  <- df %>% mutate(cylinders =  factor(cylinders, levels=c(3,4,5,6,8), ordered = T),
@@ -45,20 +44,17 @@ xgb_model <- xgb.train(params = xgb_params,
                        missing = NA,
                        seed = 1)
 
-
 # evaluation of the training and testing error
 xgb_model$evaluation_log %>% as_tibble() %>% 
   ggplot(aes(x=iter)) + 
   geom_line(aes(y=train_mlogloss), size=2, color="red") +
   geom_line(aes(y=test_mlogloss), size=2, color="navy")
 
-
 # feature importance 
 imp <- xgb.importance(colnames(matrix_train), model = xgb_model)
 imp %>% as_tibble() %>% mutate(Feature = as.factor(Feature),
                                Feature = fct_reorder(Feature, Gain, max)) %>% 
   ggplot(aes(x=Feature, y=Gain)) + geom_col(fill = "gold", color="black") 
-
 
 # prediction and confusion matrix
 pred <- predict(xgb_model, matrix_test) %>% 
