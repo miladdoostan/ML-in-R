@@ -4,8 +4,8 @@ library(Matrix)
 library(ISLR)
 source("train_test_split.R")
 
-# importing the data set and some cleaning
 
+# importing the data set and some cleaning
 df <- Auto %>% as_tibble()
 df  <- df %>% mutate(cylinders =  factor(cylinders, levels=c(3,4,5,6,8), ordered = T),
                      origin = as.factor(origin),
