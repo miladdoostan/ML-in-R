@@ -1,5 +1,17 @@
 library(tidyverse)
+library(xgboost)
+library(Matrix)
+library(ISLR)
 source("train_test_split.R")
+
+# importing the data set and some cleaning
+
+df <- Auto %>% as_tibble()
+df  <- df %>% mutate(cylinders =  factor(cylinders, levels=c(3,4,5,6,8), ordered = T),
+                     origin = as.factor(origin),
+                     year = as.integer(year),
+                     mpg01 = as.factor(ifelse(mpg >= median(mpg), 1, 0)))
+df %>% head()
 
 
 # creating training and testing data
